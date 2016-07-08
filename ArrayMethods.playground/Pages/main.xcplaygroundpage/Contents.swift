@@ -15,8 +15,10 @@
  ### 1. Create a changeable list for the five days of the week called 'daysOfTheWeek' and print each one by using a loop.
  */
 // write your code here
-
-
+var daysOfTheWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+for day in daysOfTheWeek {
+    print(day)
+}
 
 
 
@@ -27,7 +29,10 @@
  */
 // write your code here
 
-
+let numDaysOfTheWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+for (index, day) in numDaysOfTheWeek.enumerate() {
+    print("\(index + 1) : \(day)")
+}
 
 
 
@@ -37,9 +42,14 @@
  ### 3. Create an empty array of strings called 'emptyArray' and check to see if it's empty, printing appropriate messages.
  */
 // write your code here
+let emptyArray: [String] = []
 
-
-
+if emptyArray.isEmpty {
+    print("your array is empty")
+}
+else {
+    print("you actually have items!")
+}
 
 
 
@@ -50,7 +60,14 @@
  */
 // write your code here
 
+let reverseEmptyArray: [String] = []
 
+if !reverseEmptyArray.isEmpty {
+    print("not empty")
+}
+else {
+    print("empty")
+}
 
 
 
@@ -63,7 +80,7 @@
  */
 // write your code here
 
-
+print("\(daysOfTheWeek.count)")
 
 
 
@@ -75,9 +92,11 @@
  */
 // write your code here
 
+daysOfTheWeek.appendContentsOf(["Saturday", "Sunday"])
 
-
-
+for (index, day) in daysOfTheWeek.enumerate() {
+    print("\(index + 1): \(day)")
+}
 
 
 
@@ -86,8 +105,8 @@
  */
 // write your code here
 
-
-
+daysOfTheWeek.removeLast()
+daysOfTheWeek.insert("Sunday", atIndex: 0)
 
 
 
@@ -98,8 +117,10 @@
  */
 // write your code here
 
-
-
+for (index, day) in daysOfTheWeek.enumerate() {
+    daysOfTheWeek[index] = day.lowercaseString
+}
+print(daysOfTheWeek)
 
 
 
@@ -109,7 +130,15 @@
  ### 9. Check to see if the size of the array is greater than 5, i.e. contains the days of the weekend. If so, remove the days of the weekend from the array.
  */
 // write your code here
-
+if daysOfTheWeek.count > 5 {
+    if let index = daysOfTheWeek.indexOf("sunday") {
+        daysOfTheWeek.removeAtIndex(index)
+    }
+    if let index = daysOfTheWeek.indexOf("saturday") {
+        daysOfTheWeek.removeAtIndex(index)
+    }
+}
+print(daysOfTheWeek)
 
 
 
